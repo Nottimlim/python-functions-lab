@@ -40,7 +40,9 @@ print('Exercise 2:', simple_interest(1000, 5, 2))
 # apply_discount(80, 10) should return 72.
 #
 # Define your function and call it to display the discounted price.
-
+def apply_discount(price, discount_percentage):
+    discount_amount = (price * discount_percetange) / 100
+    return price - discount_amount
 
 print('Exercise 3:', apply_discount(100, 25))
 
@@ -58,7 +60,13 @@ print('Exercise 3:', apply_discount(100, 25))
 #
 # Define the function and then call it below.
 
-
+def convert_temperature(temp, unit):
+    if unit.upper() == "C":
+        return (temp * 9/5) + 32
+    elif unit.upper() == "F":
+        return (temp - 32) * 5/9
+    else:
+        return "Invalid unit. Use "C" for Celsius or "F" for Fahrenheit."
 
 print('Exercise 4: Convert 0°C to Fahrenheit:', convert_temperature(0, 'C'))
 print('Exercise 4: Convert 32°F to Celsius:', convert_temperature(32, 'F'))
