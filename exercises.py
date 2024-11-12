@@ -41,7 +41,7 @@ print('Exercise 2:', simple_interest(1000, 5, 2))
 #
 # Define your function and call it to display the discounted price.
 def apply_discount(price, discount_percentage):
-    discount_amount = (price * discount_percetange) / 100
+    discount_amount = (price * discount_percentage) / 100
     return price - discount_amount
 
 print('Exercise 3:', apply_discount(100, 25))
@@ -66,7 +66,7 @@ def convert_temperature(temp, unit):
     elif unit.upper() == "F":
         return (temp - 32) * 5/9
     else:
-        return "Invalid unit. Use "C" for Celsius or "F" for Fahrenheit."
+        return "Invalid unit. Use 'C' for Celsius or 'F' for Fahrenheit."
 
 print('Exercise 4: Convert 0°C to Fahrenheit:', convert_temperature(0, 'C'))
 print('Exercise 4: Convert 32°F to Celsius:', convert_temperature(32, 'F'))
@@ -95,6 +95,13 @@ print('Exercise 5:', sum_to(6))
 # largest(10, 4, 2) should return 10.
 #
 # Define your function and test it with different inputs.
+def largest(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
 
 print('Exercise 6:', largest(1, 2, 3))
 
@@ -108,7 +115,8 @@ print('Exercise 6:', largest(1, 2, 3))
 #
 # Write your function and test its output below.
 
-
+def calculate_tip(bill_amount, tip_percentage):
+    return (bill_amount * tip_percentage) / 100
 
 print('Exercise 7:', calculate_tip(50, 20))
 
@@ -122,8 +130,11 @@ print('Exercise 7:', calculate_tip(50, 20))
 # product(2, 5, 5) should return 50.
 #
 # Define the function and call it with different sets of numbers to test.
-
-
+def product(*args):
+    result = 1
+    for num in args:
+        result *= num
+    return result
 
 print('Exercise 8:', product(2, 5, 5))
 
@@ -142,6 +153,19 @@ print('Exercise 8:', product(2, 5, 5))
 #
 # Define the function and then call it below.
 
-
+def basicCalculator(num1, num2, operation):
+    if operation == "add":
+        return num1 + num2
+    elif operation == "subtract":
+        return num1 - num2
+    elif operation == "multiply":
+        return num1 * num2
+    elif operation == "divide":
+        if num2 != 0:
+            return num1 / num2
+        else:
+            return "Error: Division by zero is not allowed."
+    else:
+        return "Invalid operation. Use 'add', 'subtract', 'multiply', or 'divide'."
 
 print('Exercise 9 Result:', basicCalculator(10, 5, "subtract"))
